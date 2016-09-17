@@ -6,7 +6,7 @@ Summary:	Panzer General game data files for LGeneral game
 Summary(pl.UTF-8):	Pliki danych gry Panzer General dla gry LGeneral
 Name:		lgeneral-data-pg
 Version:	0
-Release:	1
+Release:	2
 # (not real license: material is copyrighted and used to be commercially available,
 #  but now copyright owner is no longer interested)
 License:	"abandonware"
@@ -52,6 +52,7 @@ install -d lgeneral/{gfx/{flags,terrain,units},maps,nations,scenarios,sounds,uni
 DISP=$(( (RANDOM % 87) + 31 ))
 /usr/bin/Xvfb :$DISP &
 XVFB_PID=$!
+sleep 1
 [ -n "$XVFB_PID" ] || exit 1
 DISPLAY=:$DISP lgc-pg -s pg-data -d lgeneral
 kill $XVFB_PID
